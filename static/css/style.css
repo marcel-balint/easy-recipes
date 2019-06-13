@@ -1,0 +1,64 @@
+nav {
+    color: #000;
+    background-color: #eeeeee;
+}
+
+nav .brand-logo {
+    color: #000;
+    font-family: Montserrat, Georgia, sans-serif;
+    font-weight: 700;
+    margin-left: 30px;
+}
+
+
+nav ul a {
+    color: #000;
+    font-family: Montserrat, Georgia, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+nav ul {
+    margin-right: 30px;
+}
+
+nav .brand-logo:hover {
+    color: #838383;
+}
+
+nav a {
+    color: #000;
+}
+
+nav ul a:hover {
+    border-bottom: 5px solid #54b6ba;
+}
+
+.side-nav {
+    width: 50%;
+    text-align: center;
+    background-color: #eeeeee;
+}
+.side-nav li>a {
+        font-weight: 700;
+
+}
+
+nav .button-collapse i {
+    font-size: 30px;
+}
+
+@media (max-width: 500px) {
+    nav .brand-logo {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 450px) {
+    nav .brand-logo {
+        font-size: 19px;
+        margin-left: 15px;
+    }
+}
+
