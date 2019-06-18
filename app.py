@@ -28,6 +28,12 @@ def show_recipes_by_country(country_recipes):
     return render_template('countries/china.html', recipes=recipes_list)
 
 
+@app.route('/recipes/<recipe>')
+def dispaly_recipe(recipe):
+    _recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe)})
+    return render_template('/recipes/recipe_page.html', recipe=_recipe)
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),

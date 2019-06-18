@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+    <h3 class="recipe-title">{{ recipe.recipe_name }}</h3>
+    <div class="recipe-publish">
+        <span class="recipe-author">By <span class="author-name">{{ recipe.author }}</span></span>
+    </div>
+    <div class="row">
+        <div >
+            <div class="col s12 m6 l6">
+                <h5>Ingredients</h5>
+                <ol>
+                    {% for i in recipe.ingredients %}
+                    <li>{{ i.capitalize() }}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="col s12 m6 l6">
+                <h5>Directions</h5>
+                <p>{{ recipe.directions }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
