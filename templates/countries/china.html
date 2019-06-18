@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+{% for recipe in recipes %}
+<div class="container">
+    <div class="row">               
+        <div class="col s12 m6 l3">
+            <div class="card medium">
+                <div class="card-image">
+                    <img class="recipe-img responsive-imgs" src="{{ recipe.image }}" alt="{{ recipe.recipe_name }}">
+                </div>
+                <div class="card-content">
+                    <p>author - <strong>{{ recipe.author }}</strong></p>
+                </div>
+                <div class="card-action">
+                    {{ recipe.recipe_name }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,155 +1,29 @@
 {% extends 'base.html' %} {% block content %}
-
 <div class="row">
-    <div class="col s12 m6 l3">
-        <div class="card">
-            <div class="card-image">
-                <img src="../static/images/special.jpg">
-            </div>
-            <div class="card-content">
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col s12 m6 l3">
-        <div class="card">
-            <div class="card-image">
-                <img src="../static/images/special.jpg">
-            </div>
-            <div class="card-content">
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col s12 m6 l3">
-        <div class="card">
-            <div class="card-image">
-                <img src="../static/images/special.jpg">
-            </div>
-            <div class="card-content">
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col s12 m6 l3">
-        <div class="card">
-            <div class="card-image">
-                <img src="../static/images/special.jpg">
-            </div>
-            <div class="card-content">
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-            </div>
+    <div class="img-box">
+        <div class="img responsive-img">
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col s12 m6 l3">
-        <div class="card">
-            <div class="card-image">
-                <img src="../static/images/special.jpg">
-            </div>
-            <div class="card-content">
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col s12 m6 l3">
-        <div class="card">
-            <div class="card-image">
-                <img src="../static/images/special.jpg">
-            </div>
-            <div class="card-content">
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col s12 m6 l3">
-        <div class="card">
-            <div class="card-image">
-                <img src="../static/images/special.jpg">
-            </div>
-            <div class="card-content">
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col s12 m6 l3">
-        <div class="card">
-            <div class="card-image">
-                <img src="../static/images/special.jpg">
-            </div>
-            <div class="card-content">
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-            </div>
-        </div>
+<div class="container">
+    <div class="row">
+        {% for country in countries %}
+        <a href="{{ url_for('show_recipes_by_country', country_recipes=country.country) }}">
+            <div class="col s12 m6 l3">
+                <div class="card medium">
+                    <div class="card-image">
+                        <img class="recipe-img responsive-imgs" src="{{ country.image }}" alt="{{ country.name }}">
+                    </div>
+                    <div class="card-content">
+                    </div>
+                    <div class="card-action">
+                        {{ country.country }}</a>
+                 </div>
+              </div>
+          </div>
+        </a>
+        {% endfor %}
     </div>
 </div>
-<div class="row">
-    <div class="col s12 m6 l3">
-        <div class="card">
-            <div class="card-image">
-                <img src="../static/images/special.jpg">
-            </div>
-            <div class="card-content">
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col s12 m6 l3">
-        <div class="card">
-            <div class="card-image">
-                <img src="../static/images/special.jpg">
-            </div>
-            <div class="card-content">
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col s12 m6 l3">
-        <div class="card">
-            <div class="card-image">
-                <img src="../static/images/special.jpg">
-            </div>
-            <div class="card-content">
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col s12 m6 l3">
-        <div class="card">
-            <div class="card-image">
-                <img src="../static/images/special.jpg">
-            </div>
-            <div class="card-content">
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 {% endblock %}

@@ -12,13 +12,21 @@ app.config['MONGO_URI'] = 'mongodb+srv://marcel:Euskaltel@myfirstcluster-r0di4.m
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
 @app.route('/home')
 def home():
     _countries = mongo.db.countries.find()
     countries_list = [countries for countries in _countries]
     return render_template('home.html', countries=countries_list)
+   
     
+@app.route('/countries/<country_recipes>/')
+def show_recipes_by_country(country_recipes):
+    recipes = mongo.db.recipes.find({'country': country_recipes})
+    recipes_list = [recipe for recipe in recipes]
+    return render_template('countries/china.html', recipes=recipes_list)
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
