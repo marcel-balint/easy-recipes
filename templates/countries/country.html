@@ -9,10 +9,10 @@
                     <div class="card-image">
                         <img class="recipe-img responsive-imgs" src="{{ recipe.image }}" alt="{{ recipe.recipe_name }}">
                     </div>
-                    <div class="card-content">
-                        <p>Author - <strong>{{ recipe.author }}</strong></p>
+                    <div class="card-content author">
+                        <p>Author - {{ recipe.author }}</p>
                     </div>
-                    <div class="card-action">
+                    <div class="card-action country-page">
                         {{ recipe.recipe_name }}
                     </div>
                 </div>
