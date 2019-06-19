@@ -4,19 +4,24 @@
     <div class="recipe-publish">
         <span class="recipe-author">By <span class="author-name">{{ recipe.author }}</span></span>
     </div>
-    <div class="row">
-        <div >
-            <div class="col s12 m6 l6">
+
+    <div class="row recipe-info">
+        <div>
+            <div class="col s12 m12 l6">
                 <h5>Ingredients</h5>
-                <ol>
+                <ul>
                     {% for i in recipe.ingredients %}
-                    <li>{{ i.capitalize() }}</li>
+                    <li class="ul-list">{{ i.capitalize() }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col s12 m12 l6">
+                <h5>Directions</h5>
+                <ol class="ol-list">
+                    {% for x in recipe.directions %}
+                    <li class="list">{{ x }}</li>
                     {% endfor %}
                 </ol>
-            </div>
-            <div class="col s12 m6 l6">
-                <h5>Directions</h5>
-                <p>{{ recipe.directions }}</p>
             </div>
         </div>
     </div>
