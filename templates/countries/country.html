@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+    <div class="row">
+        {% for recipe in recipes %}
+        <h1>{{ recipe.country }}</h1>
+        <a href="{{ url_for('dispaly_recipe', recipe=recipe._id) }}">
+            <div class="col s12 m6 l3">
+                <div class="card medium">
+                    <div class="card-image">
+                        <img class="recipe-img responsive-imgs" src="{{ recipe.image }}" alt="{{ recipe.recipe_name }}">
+                    </div>
+                    <div class="card-content">
+                        <p>Author - <strong>{{ recipe.author }}</strong></p>
+                    </div>
+                    <div class="card-action">
+                        {{ recipe.recipe_name }}
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

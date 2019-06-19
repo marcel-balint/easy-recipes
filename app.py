@@ -21,11 +21,11 @@ def home():
     return render_template('home.html', countries=countries_list)
    
     
-@app.route('/countries/<country_recipes>/')
+@app.route('/countries/<country_recipes>')
 def show_recipes_by_country(country_recipes):
     recipes = mongo.db.recipes.find({'country': country_recipes})
     recipes_list = [recipe for recipe in recipes]
-    return render_template('countries/china.html', recipes=recipes_list)
+    return render_template('countries/country.html', recipes=recipes_list)
 
 
 @app.route('/recipes/<recipe>')
