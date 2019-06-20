@@ -3,25 +3,26 @@
     <h3 class="recipe-title">{{ recipe.recipe_name }}</h3>
     <div class="recipe-publish">
         <span class="recipe-author">By <span class="author-name">{{ recipe.author }}</span></span>
+        <p class="prep-time">preparation time: <span>{{ recipe.prep_time }}</span></p>
+        <p class="cook-time">cooking time: <span>{{ recipe.cook_time }}</span></p>
     </div>
+
     <div class="row recipe-info" id="recipe-info">
-        <div>
-            <div class="col s12 m12 l6">
-                <h5>Ingredients</h5>
-                <ul>
-                    {% for i in recipe.ingredients %}
-                    <li class="ul-list">{{ i.capitalize() }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <div class="col s12 m12 l6">
-                <h5>Directions</h5>
-                <ol class="ol-list">
-                    {% for x in recipe.directions %}
-                    <li class="list">{{ x }}</li>
-                    {% endfor %}
-                </ol>
-            </div>
+        <div class="col s12 m12 l6">
+            <h5>Ingredients</h5>
+            <ul>
+                {% for i in recipe.ingredients %}
+                <li class="ul-list">{{ i.capitalize() }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col s12 m12 l6">
+            <h5>Directions</h5>
+            <ol class="ol-list">
+                {% for direction in recipe.directions %}
+                <li class="list">{{ direction }}</li>
+                {% endfor %}
+            </ol>
         </div>
     </div>
 </div>

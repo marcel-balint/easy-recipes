@@ -80,7 +80,7 @@ nav .button-collapse i {
 }
 
 .author {
-    background-color: mediumturquoise;
+    background-color: #33CCCC;
 
 }
 
@@ -177,14 +177,10 @@ ul:not(.browser-default) {
 }
 
 .recipe-publish {
-    margin-bottom: 20px;
-}
-
-#recipe-author {
-    position: relative;
-    padding-left: 10px;
-    margin-left: 12px;
-    margin-left: 20%;
+    border: 2px solid #227774;
+    text-align: center;
+    margin-bottom: -70px;
+    padding-top: 10px;
 }
 
 .author-name {
@@ -228,6 +224,23 @@ ul:not(.browser-default) {
 
 h5 {
     font-family: Georgia;
+}
+
+.prep-time {
+    margin-bottom: 2px;
+}
+.prep-time,
+.cook-time {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #227774;
+}
+
+.prep-time span,
+.cook-time span {
+    text-transform: lowercase;
+    font-weight: 400;
+    color: #000;
 }
 
 @media (max-width:1200px) and (min-width:993px) {
