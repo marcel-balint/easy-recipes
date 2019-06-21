@@ -1,0 +1,57 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+    <h5 class="add-recipe-heading">Add recipe</h5>
+    <div class="row add-recipe-row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                    <input placeholder="Placeholder" id="first_name" type="text" class="validate" required>
+                    <label for="first_name">*Recipe Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6 l6">
+                    <input placeholder="Placeholder" id="first_name" type="text" class="validate" required>
+                    <label for="first_name">*Recipe Country</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <input placeholder="Placeholder" id="first_name" type="text" class="validate" required>
+                    <label for="first_name">*Preparation Time</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6 l6">
+                    <input placeholder="Placeholder" id="first_name" type="text" class="validate" required>
+                    <label for="first_name">*Cooking Time</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <input placeholder="Placeholder" id="first_name" type="text" class="validate" required>
+                    <label for="first_name">*Author Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                    <input placeholder="Placeholder" id="first_name" type="text" class="validate" required>
+                    <label for="first_name">*Image URL</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                    <textarea id="icon_prefix2" class="materialize-textarea" required></textarea>
+                    <label for="first_name">*Ingredients</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                    <textarea id="icon_prefix2" class="materialize-textarea" required></textarea>
+                    <label for="first_name">*Directions</label>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Add Recipe
+            </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
