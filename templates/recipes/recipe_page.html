@@ -11,8 +11,8 @@
         <div class="col s12 m12 l6">
             <h5>Ingredients</h5>
             <ul>
-                {% for i in recipe.ingredients %}
-                <li class="ul-list">{{ i.capitalize() }}</li>
+                {% for x in recipe.ingredients %}
+                  <li class="ul-list">{{ x.capitalize() }}</li>
                 {% endfor %}
             </ul>
         </div>
@@ -28,3 +28,6 @@
 </div>
 
 {% endblock %}
+
+
+     
