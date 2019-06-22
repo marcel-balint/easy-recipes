@@ -1,5 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
+    <div class="box-buttons">
+        <a class="waves-effect waves-light btn btn-1">Edit</a>
+        <a class="waves-effect waves-light btn">Delete</a>
+    </div>
     <h3 class="recipe-title">{{ recipe.recipe_name }}</h3>
     <div class="recipe-publish">
         <span class="recipe-author">By <span class="author-name">{{ recipe.author }}</span></span>
@@ -12,7 +16,7 @@
             <h5>Ingredients</h5>
             <ul>
                 {% for x in recipe.ingredients %}
-                  <li class="ul-list">{{ x.capitalize() }}</li>
+                <li class="ul-list">{{ x.capitalize() }}</li>
                 {% endfor %}
             </ul>
         </div>
@@ -28,6 +32,3 @@
 </div>
 
 {% endblock %}
-
-
-     
