@@ -1,0 +1,70 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+    <h5 class="add-recipe-heading">Edit recipe</h5>
+    <div class="row add-recipe-row">
+        <form class="col s12" action="{{ url_for('update_recipe', recipe._id) }}" method="POST">
+            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                    <input placeholder="Placeholder" id="recipe_name" type="text" name="recipe_name" value="{{ recipe.recipe_name }}" class="validate" >
+                    <label for="first_name">Recipe Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6 l6">
+                    <select id="category" name="country">
+                     <option value="" disabled selected>Choose country</option>
+                        {% for country in countries %}
+                          {% if country.country == recipe.country  %}
+                            <option  value="{{country.country}}" selected>{{ country.country}}</option>
+                          {% else %}
+                             <option  value="{{country.country}}" >{{ country.country}}</option>
+                           {% endif %}
+                        {% endfor %}
+                    </select>       
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <input placeholder="Placeholder" id="prep_time" type="text" name="prep_time" value="{{ recipe.prep_time }}" class="validate" >
+                    <label for="first_name">Preparation Time</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6 l6">
+                    <input placeholder="Placeholder" id="cook_time" type="text" name="cook_time" value="{{ recipe.cook_time }}" class="validate" >
+                    <label for="first_name">Cooking Time</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <input placeholder="Placeholder" id="author" type="text" name="author" value="{{ recipe.author }}" class="validate" >
+                    <label for="first_name">Author Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                    <input placeholder="Placeholder" id="image" type="text" name="image" value="{{ recipe.image }}" class="validate" >
+                    <label for="first_name">Image URL</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                    {% for i in recipe.ingredients %}
+                    <textarea id="icon_prefix2" class="materialize-textarea"   name="ingredients"  >{{ i }}</textarea>
+                    {% endfor %}
+                    <label for="first_name">Ingredients</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                    {% for i in recipe.directions %}
+                    <textarea id="icon_prefix2" class="materialize-textarea" id="directions" name="directions"  >{{ i }}</textarea>
+                    {% endfor %}
+                    <label for="first_name">Directions</label>
+                </div>                                                                           
+            </div>
+            <div class="row">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Edit Recipe</button>
+            </div>
+        </form>
+    </div>
+</div>         
+{% endblock %}
+
+

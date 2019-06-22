@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
     <div class="box-buttons">
-        <a class="waves-effect waves-light btn btn-1">Edit</a>
+        <a href="{{ url_for('edit_recipe', recipe=recipe._id) }}" class="waves-effect waves-light btn btn-1">Edit</a>
         <a class="waves-effect waves-light btn">Delete</a>
     </div>
     <h3 class="recipe-title">{{ recipe.recipe_name }}</h3>

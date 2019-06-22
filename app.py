@@ -71,6 +71,12 @@ def insert_recipe():
         
     return redirect('home')
 
+@app.route('/edit_recipe/<recipe>')
+def edit_recipe(recipe):
+    the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe)})
+    _countries = mongo.db.countries.find()
+    countries_list = [countries for countries in _countries]
+    return render_template("edit_recipe.html", recipe=the_recipe, countries=countries_list)
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
