@@ -2,7 +2,7 @@
 <div class="container">
     <h5 class="add-recipe-heading">Edit recipe</h5>
     <div class="row add-recipe-row">
-        <form class="col s12" action="{{ url_for('update_recipe', recipe._id) }}" method="POST">
+        <form class="col s12" action="{{ url_for('update_task', recipe_id=recipe._id) }}" method="POST">
             <div class="row">
                 <div class="input-field col s12 m12 l12">
                     <input placeholder="Placeholder" id="recipe_name" type="text" name="recipe_name" value="{{ recipe.recipe_name }}" class="validate" >
@@ -64,7 +64,7 @@
             </div>
         </form>
     </div>
-</div>         
+</div>    
 {% endblock %}
 
 

@@ -59,7 +59,7 @@ def insert_recipe():
         if regex.match(key):
             ingredients.append(form[key])
         
-    recipe.insert_one({
+    recipe.insert({
             "recipe_name": request.form.get("recipe_name"),
             "country": request.form.get("country"),
             "prep_time": request.form.get("prep_time"),
@@ -77,6 +77,38 @@ def edit_recipe(recipe):
     _countries = mongo.db.countries.find()
     countries_list = [countries for countries in _countries]
     return render_template("edit_recipe.html", recipe=the_recipe, countries=countries_list)
+    
+@app.route('/update_recipe/<recipe_id>', methods=["POST"])
+def update_task(recipe_id):
+    recipes = mongo.db.recipes
+    
+    form = request.form.to_dict()
+    directions = []
+    ingredients = []
+        
+    for key in form:
+        regex = re.compile("^directions")
+        if regex.match(key):
+            directions.append(form[key]) 
+        
+    for key in form:
+        regex = re.compile("^ingredient")
+        if regex.match(key):
+            ingredients.append(form[key])
+            
+    recipes.update( {'_id': ObjectId(recipe_id)},
+    {
+        'recipe_name': request.form.get('recipe_name'),
+        'country': request.form.get('country'),
+        'prep_time': request.form.get('prep_time'),
+        'cook_time': request.form.get('cook_time'),
+        'ingredients': ingredients,
+        'image': request.form.get('image'),
+        'author': request.form.get('author'),
+        'directions': directions
+    })
+    return redirect(url_for('dispaly_recipe', recipe=recipe_id))
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
