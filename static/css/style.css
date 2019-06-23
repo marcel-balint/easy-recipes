@@ -298,6 +298,39 @@ h5 {
     text-transform: capitalize;
 }
 
+.remove-field {
+    text-transform: uppercase;
+    border: 0;
+    background-color: red;
+    color: #fff;
+    top: 49px;
+    position: absolute;
+    padding: 2px 5px 2px 5px;
+    right: 11px;
+}
+
+.remove-field:hover {
+    color: #b30000;
+    background-color: #fff;
+    border: 1px solid #000;
+}
+button {
+    margin-left: 23px;
+    border: 0;
+    background-color: green;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 2px 5px 2px 5px
+}
+
+button:hover {
+    color: #006400;
+    background-color: #fff;
+    border: 1px solid #000;
+}
+
+
+
 @media (max-width:1200px) and (min-width:993px) {
     .container .row {
         margin-left: -85px;
