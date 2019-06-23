@@ -47,28 +47,16 @@ def add_recipe():
 def insert_recipe():
     recipe = mongo.db.recipes
     
-    form = request.form.to_dict()
-    directions = []
-    ingredients = []
-        
-    for key in form:
-        regex = re.compile("^directions")
-        if regex.match(key):
-            directions.append(form[key]) 
-        
-    for key in form:
-        regex = re.compile("^ingredient")
-        if regex.match(key):
-            ingredients.append(form[key])
-        
+    form = request.form.to_dict(flat=False)
+   
     recipe.insert({
             "recipe_name": request.form.get("recipe_name"),
             "country": request.form.get("country"),
             "prep_time": request.form.get("prep_time"),
             "cook_time": request.form.get("cook_time"),
-            "ingredients": ingredients,
+            "ingredients": form["ingredients"],
             "author": request.form.get("author"),
-            "directions": directions
+            "directions": form["directions"]
         })        
         
     return redirect('home')
