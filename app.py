@@ -35,11 +35,13 @@ def dispaly_recipe(recipe):
     _recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe)})
     return render_template('/recipes/recipe_page.html', recipe=_recipe)
 
+
 @app.route('/add_recipe')
 def add_recipe():
     _countries = mongo.db.countries.find()
     country_list = [country for country in _countries]
     return render_template('add_recipe.html', countries= country_list)
+
 
 @app.route('/insert_recipe', methods=["POST"])
 def insert_recipe():
@@ -71,12 +73,15 @@ def insert_recipe():
         
     return redirect('home')
 
+
 @app.route('/edit_recipe/<recipe>')
 def edit_recipe(recipe):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe)})
     _countries = mongo.db.countries.find()
     countries_list = [countries for countries in _countries]
     return render_template("edit_recipe.html", recipe=the_recipe, countries=countries_list)
+    
+    
     
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_task(recipe_id):
@@ -108,6 +113,14 @@ def update_task(recipe_id):
         'directions': directions
     })
     return redirect(url_for('dispaly_recipe', recipe=recipe_id))
+
+
+
+@app.route('/delete_recipe/<recipe>')
+def delete_recipe(recipe):
+    mongo.db.recipes.remove({"_id": ObjectId(recipe)})
+    return redirect(url_for('home'))
+
 
 
 if __name__ == '__main__':
