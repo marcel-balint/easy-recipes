@@ -1,15 +1,15 @@
 {% extends 'base.html' %} {% block content %}
-<div class="container">
-    <h5 class="add-recipe-heading">Add recipe</h5>
+<div class="container add-recipe">
+    <h5 class="add-recipe-heading">{{ title }}</h5>
     <div class="row add-recipe-row">
         <form class="col s12" action="{{ url_for('insert_recipe') }}" method="POST">
-            <div class="row">
+            <div class="row  add-recipe-row">
                 <div class="input-field col s12 m12 l12">
-                    <input placeholder="Placeholder" id="recipe_name" type="text" name="recipe_name" class="validate" required>
-                    <label for="first_name"><span class="required">*</span>Recipe Name</label>
+                    <input placeholder="Enter a name" id="recipe_name" type="text" name="recipe_name" class="validate" required>
+                    <label for="recipe_name"><span class="required">*</span>Recipe Name</label>
                 </div>
             </div>
-            <div class="row">
+            <div class="row add-recipe-row">
                 <div class="input-field col s12 m6 l6">
                     <select id="category" name="country">
                      <option value="" disabled selected><span class="required">*</span>Choose country</option>
@@ -19,43 +19,45 @@
                     </select>       
                 </div>
                 <div class="input-field col s12 m6 l6">
-                    <input placeholder="Placeholder" id="prep_time" type="text" name="prep_time" class="validate" required>
-                    <label for="first_name"><span class="required">*</span>Preparation Time</label>
+                    <input placeholder="Ex: 15 minutes" id="prep_time" type="text" name="prep_time" class="validate" required>
+                    <label for="prep_time"><span class="required">*</span>Preparation Time</label>
                 </div>
             </div>
-            <div class="row">
+            <div class="row add-recipe-row">
                 <div class="input-field col s12 m6 l6">
-                    <input placeholder="Placeholder" id="cook_time" type="text" name="cook_time" class="validate" required>
-                    <label for="first_name"><span class="required">*</span>Cooking Time</label>
+                    <input placeholder="Ex: 30 minutes" id="cook_time" type="text" name="cook_time" class="validate" required>
+                    <label for="cook_time"><span class="required">*</span>Cooking Time</label>
                 </div>
                 <div class="input-field col s12 m6 l6">
-                    <input placeholder="Placeholder" id="author" type="text" name="author" class="validate" required>
-                    <label for="first_name"><span class="required">*</span>Author Name</label>
+                    <input placeholder="Enter recipes's author" id="author" type="text" name="author" class="validate" required>
+                    <label for="author"><span class="required">*</span>Author Name</label>
                 </div>
             </div>
-            <div class="row">
+            <div class="row add-recipe-row">
                 <div class="input-field col s12 m12 l12">
-                    <input placeholder="Placeholder" id="image" type="text" name="image" class="validate" required>
-                    <label for="first_name"><span class="required">*</span>Image URL</label>
+                    <input placeholder="Place an image URL" id="image" type="text" name="image" class="validate" required>
+                    <label for="image"><span class="required">*</span>Image URL</label>
                 </div>
             </div>
-            <div class="row">
+            <div class="row add-recipe-row">
                 <div class="input-field col s12 m12 l12" id="ingredients">
-                    <textarea id="icon_prefix2" class="materialize-textarea" id="ingredients" name="ingredients" required></textarea>
-                    <label for="first_name"><span class="required">*</span>Ingredients</label>
+                    <textarea id="icon_prefix2" class="materialize-textarea" id="ingredients" placeholder="First ingredient" name="ingredients" required></textarea>
+                    <label for="ingredients"><span class="required">*</span>Ingredients</label>
                 </div>
-                <button id="add">Add Recipes</button>
+                <button id="add">Add Ingredients</button>
             </div>
-            <div class="row">
+            <div class="row add-recipe-row">
                 <div class="input-field col s12 m12 l12" id="directions">
-                    <textarea id="icon_prefix2" class="materialize-textarea" id="directions" name="directions" required></textarea>
-                    <label for="first_name"><span class="required">*</span>Directions</label>
+                    <textarea id="icon_prefix2" class="materialize-textarea" id="directions" placeholder="First direction" name="directions" required></textarea>
+                    <label for="directions"><span class="required">*</span>Directions</label>
                 </div>
                 <button id="add-directions">Add Directions</button>
             </div>
             <div class="row">
+                <p class="center-align">
                 <button class="btn waves-effect waves-light" type="submit" name="action">Add Recipe
             </button>
+            </p>
             </div>
         </form>
     </div>

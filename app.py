@@ -19,7 +19,8 @@ mongo = PyMongo(app)
 def home():
     _countries = mongo.db.countries.find()
     countries_list = [countries for countries in _countries]
-    return render_template('home.html', countries=countries_list)
+    recipes_nr = mongo.db.recipes.count()
+    return render_template('home.html', countries=countries_list, recipes_nr=recipes_nr)
    
    
    
@@ -40,7 +41,7 @@ def dispaly_recipe(recipe):
 def add_recipe():
     _countries = mongo.db.countries.find()
     country_list = [country for country in _countries]
-    return render_template('add_recipe.html', countries= country_list)
+    return render_template('add_recipe.html', countries= country_list, title="Add recipe")
 
 
 @app.route('/insert_recipe', methods=["POST"])
@@ -66,7 +67,7 @@ def edit_recipe(recipe):
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe)})
     _countries = mongo.db.countries.find()
     countries_list = [countries for countries in _countries]
-    return render_template("edit_recipe.html", recipe=the_recipe, countries=countries_list)
+    return render_template("edit_recipe.html", recipe=the_recipe, countries=countries_list, title="Edit recipe")
     
     
     

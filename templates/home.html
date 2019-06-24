@@ -6,6 +6,7 @@
     </div>
 </div>
 <div class="container">
+    <p class="total">Total recipes: <strong>{{ recipes_nr }}</strong></p>
     <div class="row">
         {% for country in countries %}
         <a href="{{ url_for('show_recipes_by_country', country_recipes=country.country) }}">
