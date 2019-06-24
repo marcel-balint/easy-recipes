@@ -46,8 +46,7 @@ def add_recipe():
 @app.route('/insert_recipe', methods=["POST"])
 def insert_recipe():
     recipe = mongo.db.recipes
-    
-    form = request.form.to_dict(flat=False)
+    form = request.form.to_dict(flat=False) #flat is False, all values will be returned as list of array
    
     recipe.insert({
             "recipe_name": request.form.get("recipe_name"),
@@ -74,31 +73,18 @@ def edit_recipe(recipe):
 @app.route('/update_recipe/<recipe_id>', methods=["POST"])
 def update_task(recipe_id):
     recipes = mongo.db.recipes
-    
-    form = request.form.to_dict()
-    directions = []
-    ingredients = []
-        
-    for key in form:
-        regex = re.compile("^directions")
-        if regex.match(key):
-            directions.append(form[key]) 
-        
-    for key in form:
-        regex = re.compile("^ingredient")
-        if regex.match(key):
-            ingredients.append(form[key])
-            
+    form = request.form.to_dict(flat=False)  #flat is False, all values will be returned as list of array
+
     recipes.update( {'_id': ObjectId(recipe_id)},
     {
         'recipe_name': request.form.get('recipe_name'),
         'country': request.form.get('country'),
         'prep_time': request.form.get('prep_time'),
         'cook_time': request.form.get('cook_time'),
-        'ingredients': ingredients,
+        'ingredients': form["ingredients"],
         'image': request.form.get('image'),
         'author': request.form.get('author'),
-        'directions': directions
+        'directions': form["directions"]
     })
     return redirect(url_for('dispaly_recipe', recipe=recipe_id))
 

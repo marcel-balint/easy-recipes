@@ -44,20 +44,22 @@
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12 m12 l12">
+                <div class="input-field col s12 m12 l12" id="ingredients">
                     {% for i in recipe.ingredients %}
                     <textarea id="icon_prefix2" class="materialize-textarea"   name="ingredients"  >{{ i }}</textarea>
                     {% endfor %}
                     <label for="first_name">Ingredients</label>
                 </div>
+                <button id="add">Add Recipes</button>
             </div>
             <div class="row">
-                <div class="input-field col s12 m12 l12">
+                <div class="input-field col s12 m12 l12" id="directions">
                     {% for i in recipe.directions %}
                     <textarea id="icon_prefix2" class="materialize-textarea" id="directions" name="directions"  >{{ i }}</textarea>
                     {% endfor %}
                     <label for="first_name">Directions</label>
-                </div>                                                                           
+                </div>   
+                <button id="add-directions">Add Directions</button>
             </div>
             <div class="row">
                 <button class="btn waves-effect waves-light" type="submit" name="action">Edit Recipe</button>
