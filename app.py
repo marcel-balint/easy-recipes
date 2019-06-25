@@ -55,6 +55,7 @@ def insert_recipe():
             "prep_time": request.form.get("prep_time"),
             "cook_time": request.form.get("cook_time"),
             "ingredients": form["ingredients"],
+            "image": request.form.get("image"),
             "author": request.form.get("author"),
             "directions": form["directions"]
         })        
@@ -95,6 +96,9 @@ def update_task(recipe_id):
 def delete_recipe(recipe):
     mongo.db.recipes.remove({"_id": ObjectId(recipe)})
     return redirect(url_for('home'))
+    
+
+
 
 
 

@@ -27,8 +27,9 @@ nav ul a {
 }
 
 nav ul a:hover {
-    border-bottom: 3px solid #000;
+    border-bottom: 3px solid #fff;
     background-color: inherit;
+    color: #fff;
 }
 
 nav ul {
@@ -36,7 +37,7 @@ nav ul {
 }
 
 nav .brand-logo:hover {
-    color: #838383;
+    color: #fff;
 }
 
 nav a {
@@ -170,6 +171,16 @@ h1 {
     width: 110px;
 }
 
+.home-text {
+    text-align: center;
+    z-index: 2;
+    color: #fff;
+    font-size: 25px;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
 /*--------------recipe page------------------------*/
 
 .box-recipe {
@@ -278,13 +289,14 @@ h5 {
 }
 
 /* ---------------add_recipe--------------*/
+
 input[type=text]:not(.browser-default) {
     border-bottom: 1px solid #000;
 }
 
-::placeholder { 
-  color: #000;
-  opacity: 0.5; 
+::placeholder {
+    color: #000;
+    opacity: 0.5;
 }
 
 .input-field label {
@@ -360,13 +372,43 @@ textarea.materialize-textarea {
 }
 
 #add,
-#add-directions{
+#add-directions {
     margin-bottom: 7px;
 }
 
-@media (min-width:1100px) {
+
+@media (min-width: 600px) {
+    .home-text {
+        width: 400px;
+        font-size: 25px;
+        margin-top: 100px;
+    }
+}
+
+@media (min-width: 1100px) {
     .total {
         width: 130px;
+        
+    }
+    .home-text {
+        width: 500px;
+        font-size: 30px;
+        margin-top: 60px;
+    }
+}
+
+@media (min-width: 1300px) {
+    .home-text {
+        width: 800px;
+        margin-top: 60px;
+    }
+}
+
+@media (min-width: 1800px) {
+    .home-text {
+        width: 800px;
+        font-size: 40px;
+        margin-top: 60px;
     }
 }
 
