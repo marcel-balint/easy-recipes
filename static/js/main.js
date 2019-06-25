@@ -23,12 +23,11 @@ $(document).ready(function() {
     });
 
 
-
     //  add/remove functionality for directions fields
     var wrapper_dirctions = $("#directions"); 
     var add_button_directions = $("#add-directions"); 
    
-    var x = 1;
+     x = 1;
     
    $(add_button_directions).click(function(){ // on click add a new textarea field
             $(wrapper_dirctions).append('<div class="input-field col s12 m12 l12" id="directions">' +
@@ -43,6 +42,6 @@ $(document).ready(function() {
     });
     
     var home_text = $(".responsive-img");
-    $(home_text).append("<p class='center-align home-text'>Welcome to Easy Recipes! Here you can create, update or delete your very own recipes</p>")
+    $(home_text).append("<p class='center-align home-text'>Welcome to <strong>Easy Recipes</strong>! Here you can create, update or delete your very own recipes.</p>");
 
 });

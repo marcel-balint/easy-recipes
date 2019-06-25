@@ -168,7 +168,9 @@ h1 {
     position: relative;
     top: -99px;
     margin: 0 auto;
-    width: 110px;
+    width: 210px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .home-text {
@@ -181,7 +183,7 @@ h1 {
     margin-top: 100px;
 }
 
-/*--------------recipe page------------------------*/
+/*--------------recipe_page.html------------------------*/
 
 .box-recipe {
     width: 800px;
@@ -288,7 +290,7 @@ h5 {
     margin-right: 10px;
 }
 
-/* ---------------add_recipe--------------*/
+/* ---------------add_recipe.html--------------*/
 
 input[type=text]:not(.browser-default) {
     border-bottom: 1px solid #000;
@@ -376,6 +378,7 @@ textarea.materialize-textarea {
     margin-bottom: 7px;
 }
 
+/*-------------------media queries--------------*/
 
 @media (min-width: 600px) {
     .home-text {
@@ -385,17 +388,12 @@ textarea.materialize-textarea {
     }
 }
 
-@media (min-width: 1100px) {
-    .total {
-        width: 130px;
-        
-    }
-    .home-text {
-        width: 500px;
-        font-size: 30px;
-        margin-top: 60px;
+@media only screen and (min-width: 993px) {
+    .container {
+        width: 80%;
     }
 }
+
 
 @media (min-width: 1300px) {
     .home-text {
@@ -416,7 +414,6 @@ textarea.materialize-textarea {
     .container .row {
         margin-left: -85px;
         margin-right: -85px;
-        /* -85px     */
     }
     .container .add-recipe-row {
         margin-left: auto;
