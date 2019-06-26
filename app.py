@@ -12,7 +12,7 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route('/home')
+@app.route('/home', methods=["GET"])
 def home():
     _countries = mongo.db.countries.find()
     countries_list = [countries for countries in _countries]

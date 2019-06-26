@@ -6,8 +6,9 @@
         <a href="{{ url_for('dispaly_recipe', recipe=recipe._id) }}">
             <div class="col s12 m6 l3">
                 <div class="card medium">
-                    <div class="card-image">
+                    <div class="card-image center-align ">
                         <img class="recipe-img responsive-imgs" src="{{ recipe.image }}" alt="{{ recipe.recipe_name }}">
+                        <p class="view-recipe">View Recipe</p>
                     </div>
                     <div class="card-content author">
                         <p>Author - {{ recipe.author }}</p>

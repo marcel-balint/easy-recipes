@@ -183,6 +183,15 @@ h1 {
     margin-top: 100px;
 }
 
+.view-recipe {
+    position: sticky;
+    left: 25%;
+    font-size: 20px;
+    bottom: 0;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
 /*--------------recipe_page.html------------------------*/
 
 .box-recipe {
