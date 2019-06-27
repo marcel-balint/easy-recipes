@@ -460,6 +460,9 @@ textarea.materialize-textarea {
         height: 40px;
         margin: 0 auto;
     }
+    #sidenav-overlay {
+        z-index: 1;
+    }
 }
 
 @media (max-width: 500px) {
