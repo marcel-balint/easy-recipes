@@ -21,14 +21,14 @@ def home():
                            recipes_nr=recipes_nr)
 
 
-@app.route('/countries/<country_recipes>')
+@app.route('/countries/<country_recipes>', methods=["GET"])
 def show_recipes_by_country(country_recipes):
     recipes = mongo.db.recipes.find({'country': country_recipes})
     recipes_list = [recipe for recipe in recipes]
     return render_template('countries/country.html', recipes=recipes_list)
 
 
-@app.route('/recipes/<recipe>')
+@app.route('/recipes/<recipe>', methods=["GET"])
 def dispaly_recipe(recipe):
     _recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe)})
     return render_template('/recipes/recipe_page.html', recipe=_recipe)
