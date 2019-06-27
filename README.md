@@ -23,7 +23,7 @@ The wireframes for this website can be seen [here](https://github.com/marcel-bal
 
 - **Navbar**, located at the top of the home page, has a background color of green(`#228B22`) and a box shadow effect. Contains two links:
    - **Home** - links back to home page: on hover, the text and the border bottom transitions into a white color(`#fff`);
-   - **Add Recipes** - links to page with a form where a user can add a new recipe: on hover, the text and the border bottom transitions into a white color(`#fff`);
+   - **Add Recipes** - links to a page with a form where a user can add a new recipe. On hover, the text and the border bottom transitions into a white color(`#fff`);
  
 - A background image with introduction text - This section introduces the user to the website and explains the main functionality;
 - The home page features a list of 12 cards with each card containing the name of a particular country cuisine.
@@ -48,7 +48,7 @@ The wireframes for this website can be seen [here](https://github.com/marcel-bal
     - At the top-right side of the page, the user will be presented with _Edit_ and _Delete_ buttons.
 
 - **Edit Recipes**
-    - Users are able to edit a recipe by clicking the _Edit_ button that will be displayed on top-right side of the recipe page.
+    - Users are able to edit a recipe by clicking the _Edit_ button that will be displayed on top-right side of each recipe page.
       A form pre-populated with the details from the recipe record will be displayed. Users can make any changes that they require.
 - **Delete Recipes**
     - Users may choose to delete any recipe by clicking the _Delete_ button from the recipe page page (the recipe is deleted from the database). 
@@ -77,9 +77,6 @@ The wireframes for this website can be seen [here](https://github.com/marcel-bal
 ## Testing
 All pages have been tested on all screen sizes. This has been done via Google Chrome developer tools and by testing on my own personal phone and ipad.
 Also all features of the page are scaling as intended in tablet and mobile devices.
-
-According to [this](https://varvy.com/mobile/) website, my website is 100/100 mobile friendly,
-the results can be found [here](https://github.com/marcel-balint/easy-recipes/blob/master/static/wireframes/responsiveness.PNG).
 
 
 I've created reipes to test the _Add Recipe_ functionality.
@@ -117,8 +114,8 @@ If the _Add Recipe_ form is submitted without a field being completed or without
 
 Thre are no differences between the deployed version and the development version.
 
-* Created **requirements.txt**.
-* Created **Procfile**.
+* Created **requirements.txt** file.
+* Created **Procfile** file.
 * Created a new app on _[Heroku](https://www.heroku.com/)_
 * In command line:
     * `Heroku login` (login to _Heroku_)
@@ -127,7 +124,7 @@ Thre are no differences between the deployed version and the development version
     * `git commit -m "initial deployment"`
     * `git push -u heroku master`
     * `heroku ps:scale web=1`
-* In _Heroku_  on **Settings** tab on the _Reveal Config Vars_ to configure environmental variables as follows:
+* In _Heroku_  on **Settings** tab clicked on the _Reveal Config Vars_ to configure environmental variables as follows:
 
   * **IP**: ` 0.0.0.0`, 
   * **PORT**: `5000`,
@@ -136,6 +133,8 @@ Thre are no differences between the deployed version and the development version
 * Deploy process
    * Connected the app to _GitHub_.
    * Enabled automatic deploys from master branch.
+   
+ Live deployed version: https://easy-recipes.herokuapp.com/  
 
 #### Run the project locally
 
@@ -160,7 +159,7 @@ Clone this GitHub repository by either clicking the green Clone or download butt
 ## Credits
 #### Content
 
-All recipes on this website are taken from [this](https://www.simplyrecipes.com/) website.
+All recipes on website are taken from [this](https://www.simplyrecipes.com/) website.
 #### Media
 
 * The background image was taken from [this](https://www.allrecipes.com/) website.
