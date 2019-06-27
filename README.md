@@ -57,4 +57,116 @@ The wireframes for this website can be seen [here](https://github.com/marcel-bal
 
 - Filtering - functionality to filter recipes by author, cook time, type of meal.
 - Pagination
+
+
+## Technologies Used
+
+
+* [HTML5](https://en.wikipedia.org/wiki/HTML) - Used for rendering the website.
+* [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) - used to style the features of the website and to create responsiveness.
+* [JQuery](https://code.jquery.com/jquery/) - Javascript framework used to implement custom code and initialize Materialize functions.
+* [Materialize](https://materializecss.com/) - Used as the overall design framework.
+* [Flask](http://flask.pocoo.org/) - Framework used to build the application.
+* [Python](https://www.python.org/) - Used as the back-end programming language.
+* [Heroku](https://www.heroku.com/) - Hosts the deployed version of this project.
+* [MongoDB](https://www.mongodb.com/) - Used MongoDB for data storage.
+* [Cloud9 IDE](https://aws.amazon.com/cloud9/) - Used to build this project.
+* [GitHub](https://github.com/) - Used as remote storage of my code online..
+
+
+## Testing
+All pages have been tested on all screen sizes. This has been done via Google Chrome developer tools and by testing on my own personal phone and ipad.
+Also all features of the page are scaling as intended in tablet and mobile devices.
+
+According to [this](https://varvy.com/mobile/) website, my website is 100/100 mobile friendly,
+the results can be found [here](https://github.com/marcel-balint/easy-recipes/blob/master/static/wireframes/responsiveness.PNG).
+
+
+I've created reipes to test the _Add Recipe_ functionality.
+For several recipes, I've edited minor things like the recipe author, adding additional ingredients or directions, to test the functionality of updating a recipe to the database.
+I've deleted all of my test recipes to confirm that _Delete_ functionality works properly.
+
+If the _Add Recipe_ form is submitted without a field being completed or without containing an image URL there will be an error indicating that.
+
+#### Validators
+- **HTML** 
+
+   Passing the HTML code from all templates into the [W3C Markup Validator](https://validator.w3.org/) generates numerous errors, but these are expected as the validator is unable to understand the 
+   Jinja2 templating that builds most aspects of the page. For the HTML that does not involve Jinja2, no errors have been found.
+- **CSS**
     
+  The CSS code passes [W3C CSS Validation Service ](https://jigsaw.w3.org/css-validator/)without errors.
+
+- **JavaScript**
+  
+  The JavaScript code passes trough [JSHint](https://jshint.com/) without errors.
+
+- **Python**
+ 
+  The Python code was passed through the [PEP8 Online validator](http://pep8online.com/) and is fully PEP8 compliant.
+   
+ The project was tested to ensure full usability across the following browsers:
+
+  * Google Chrome
+
+  * Mozilla Firefox
+
+  * Microsoft Edge
+  
+## Deployment
+
+Thre are no differences between the deployed version and the development version.
+
+* Created **requirements.txt**.
+* Created **Procfile**.
+* Created a new app on _[Heroku](https://www.heroku.com/)_
+* In command line:
+    * `Heroku login` (login to _Heroku_)
+    * `git init`
+    * `git add .`
+    * `git commit -m "initial deployment"`
+    * `git push -u heroku master`
+    * `heroku ps:scale web=1`
+* In _Heroku_  on **Settings** tab on the _Reveal Config Vars_ to configure environmental variables as follows:
+
+  * **IP**: ` 0.0.0.0`, 
+  * **PORT**: `5000`,
+  * **MONGO_URI**: _my database link_
+  
+* Deploy process
+   * Connected the app to _GitHub_.
+   * Enabled automatic deploys from master branch.
+
+#### Run the project locally
+
+Clone this GitHub repository by either clicking the green Clone or download button and downloading the project as a zip-file
+* Create a **requirements.txt** file: `sudo pip3 freeze --local > requirements.txt`
+* Create a **Procfile**: `echo web: python app.py > Procfile`
+* Create a new app on _[Heroku](https://www.heroku.com/)_
+* In command line:
+    * `Heroku login` (login to _Heroku_)
+    * `git init`
+    * `git add .`
+    * `git commit -m "initial deployment"`
+    * `git push -u heroku master`
+    * `heroku ps:scale web=1`
+* In the Heroku **Settings** tab, click on the _Reveal Config Vars_ button to configure environmental variables as follows:
+    * **IP**: `0.0.0.0`
+    * **PORT**: `5000`
+    * **MONGO_URI**: _link to MongoDB database_
+    * Click **More** > **Restart all Dynos**
+ * Your app should be successfully deployed to Heroku at this point.
+
+## Credits
+#### Content
+
+All recipes on this website are taken from [this](https://www.simplyrecipes.com/) website.
+#### Media
+
+* The background image was taken from [this](https://www.allrecipes.com/) website.
+ 
+
+
+#### Acknowledgements
+
+* [Code Institute](https://codeinstitute.net/) tutors
