@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('.collapsible').collapsible();
     $('select').material_select();
     $('.button-collapse').sideNav();
-
+    $('.sidenav').sidenav();
 
     //  add/remove functionality for ingredients fields
     var wrapper = $("#ingredients"); 
