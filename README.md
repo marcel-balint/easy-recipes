@@ -71,7 +71,7 @@ The wireframes for this website can be seen [here](https://github.com/marcel-bal
 * [Heroku](https://www.heroku.com/) - Hosts the deployed version of this project.
 * [MongoDB](https://www.mongodb.com/) - Used MongoDB for data storage.
 * [Cloud9 IDE](https://aws.amazon.com/cloud9/) - Used to build this project.
-* [GitHub](https://github.com/) - Used as remote storage of my code online..
+* [GitHub](https://github.com/) - Used as remote storage of my code online.
 
 
 ## Testing
