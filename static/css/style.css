@@ -145,6 +145,7 @@ nav .button-collapse i {
 .country-page {
     font-family: cursive;
     color: #000;
+    font-size: large;
 }
 
 .country-para {
@@ -231,6 +232,7 @@ ul:not(.browser-default) {
     margin-right: 30px;
     background-color: #e3e3e3;
 }
+
 
 .ol-list {
     list-style: none;
